@@ -7,10 +7,10 @@ from sqlalchemy import create_engine, func
 
 from flask import Flask, jsonify
 
-
 #################################################
 # Database Setup
 #################################################
+
 engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 
 # reflect an existing database into a new model
@@ -25,8 +25,8 @@ Station = Base.classes.station
 #################################################
 # Flask Setup
 #################################################
-app = Flask(__name__)
 
+app = Flask(__name__)
 
 #################################################
 # Flask Routes
@@ -42,9 +42,7 @@ def welcome():
         f"Past 12 Months Data: /api/v1.0/tobs<br/>" + \
         f"Temp Stats (Start Date): /api/v1.0/<start><br/>" + \
         f"Temp Stats (Start to End Date):/api/v1.0/<start>/<end><br/>"
-    
-
-
+  
 @app.route("/api/v1.0/precipitation")
 def precipitation():
     # Create our session (link) from Python to the DB
